@@ -1,0 +1,27 @@
+import { GET_REMINDER_FAIL, GET_REMINDER_REQUEST, GET_REMINDER_SUCCESS, NEW_REMINDER_FAIL, NEW_REMINDER_REQUEST, NEW_REMINDER_SUCCESS } from "./constants"
+import axios from "axios";
+export const createReminder=(dispatch,data)=>async()=>{
+    try {
+        dispatch({type:NEW_REMINDER_REQUEST})
+        const res = await axios.post("http://localhost:3001/medecine/add",{
+          name:data.name,
+          dose:data.dose,
+          date:data.date,
+          time:data.time
+        })
+        console.log(res.data);
+        dispatch({type:NEW_REMINDER_SUCCESS,payload:res.data})
+    } catch (err) {
+        dispatch({type:NEW_REMINDER_FAIL,payload:err.message})
+    }
+}
+export const getReminder=(dispatch)=>async()=>{
+    try {
+        dispatch({type:GET_REMINDER_REQUEST})
+        const data = await axios.get("http://localhost:3001/medecine/get")
+        console.log(data.data.reminders);
+        dispatch({type:GET_REMINDER_SUCCESS,payload:data.data.reminders})
+    } catch (err) {
+        dispatch({type:GET_REMINDER_FAIL,payload:err.message})
+    }
+}

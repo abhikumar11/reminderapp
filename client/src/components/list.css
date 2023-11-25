@@ -1,0 +1,42 @@
+.header
+{
+    text-align: center;
+    height: 50px;
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+    width: 50%;
+}
+.reminder-content
+{
+    padding: 1%;
+    border: 1px solid #ced4da;
+    margin-bottom: 1%;
+    width: 50%;
+
+}
+.form-control{
+    border-radius:1.5rem;
+}
+.btnEdit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: rgba(0, 255, 72, 0.814);
+    color: #fff;
+    margin: 10px;
+}
+.btnDelete
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: red;
+    color: #fff;
+}
