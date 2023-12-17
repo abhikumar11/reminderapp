@@ -1,7 +1,6 @@
 const express=require("express");
-const { createMedecine, getMedecine } = require("../controller/medecine");
 const router=express.Router();
-
-router.post("/add",createMedecine);
-router.get("/get",getMedecine);
-module.exports = router;
+const {addMedicine,getMedicine}=require("../controllers/medicine");
+router.post("/add",addMedicine);
+router.get("/get",getMedicine);
+module.exports=router;

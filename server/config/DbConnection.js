@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+const  mongoose = require("mongoose")
 
-const connectDb=async()=>{
-    await mongoose.connect("mongodb+srv://abhi:abhi@cluster1.p6lnqsp.mongodb.net/reminderapp")
-    .then((res)=>{console.log("Connected to database")})
-    .catch((err)=>{console.log("Error connecting to database")})
+const connectDb=()=>{
+        mongoose.connect("mongodb+srv://abhi:abhi@cluster1.p6lnqsp.mongodb.net/reminderapp")
+        .then((res)=>console.log("Connected to database"))
+        .catch((err)=>console.log("Error connecting",err))
 }
-module.exports = connectDb;
+module.exports=connectDb;
